@@ -1,0 +1,11 @@
+name: QA
+
+on: pull_request
+
+jobs:
+
+  doingSomething:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Provision QA instance
+      run: Setup QA for this particular feature
