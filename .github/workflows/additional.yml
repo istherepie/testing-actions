@@ -1,0 +1,14 @@
+name: Additional workflow
+
+on: push
+
+jobs:
+
+  doingSomething:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Say something
+      run: echo Doing something...

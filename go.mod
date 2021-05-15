@@ -1,3 +1,3 @@
-module github.com/itherepie/testing-actions
+module github.com/istherepie/testing-actions
 
 go 1.16
