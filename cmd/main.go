@@ -43,6 +43,4 @@ func main() {
 
 	retCode := App(*instance, *host, *port)
 	os.Exit(retCode)
-
-	// Change
 }
