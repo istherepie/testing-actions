@@ -1,11 +1,11 @@
-name: QA
+name: Create QA
 
 on: pull_request
 
 jobs:
 
-  doingSomething:
+  create:
     runs-on: ubuntu-latest
     steps:
-    - name: Provision QA instance
+    - name: Create QA instance
       run: echo Setup QA for this particular feature

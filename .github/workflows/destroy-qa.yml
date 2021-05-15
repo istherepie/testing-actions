@@ -1,0 +1,13 @@
+name: Close QA
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+
+  destroy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Destroy QA environment
+      run: echo Destroy QA environment
