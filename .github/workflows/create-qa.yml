@@ -8,7 +8,7 @@ on:
 
   workflow_run:
     workflows:
-      - Run unit tests
+      - testEnv
     types: 
       - completed
 
