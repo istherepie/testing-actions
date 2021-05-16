@@ -23,7 +23,7 @@ func TestIndex(t *testing.T) {
 		t.Errorf("Incorrect HTTP status ,got %v want %v", status, http.StatusOK)
 	}
 
-	expected := `{"instance":"TESTINSTANCE-1FAIL"}`
+	expected := `{"instance":"TESTINSTANCE-1"}`
 
 	output := recorder.Body.String()
 
