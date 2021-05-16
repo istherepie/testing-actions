@@ -1,6 +1,9 @@
 name: Create QA
 
-on: pull_request
+on:
+  pull_request:
+    types:
+      - review_requested
 
 jobs:
 
