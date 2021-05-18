@@ -1,25 +1,24 @@
 name: Create QA
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-
   workflow_run:
     workflows:
       - Run unit tests
     types: 
       - completed
 
+
+## SOME CHANGE
+# Fixes
+
 jobs:
 
   create:
     runs-on: ubuntu-latest
-    #if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Echo conclusion
-      run: echo ${{ github.event.workflow_run.conclusion  }}
+      run: echo ${{ github.event.workflow_run.conclusion }}
 
     - name: Create QA instance
       run: echo Setup QA for this particular feature
