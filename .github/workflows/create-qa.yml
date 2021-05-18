@@ -1,11 +1,6 @@
 name: Create QA
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-
   workflow_run:
     workflows:
       - Run unit tests
