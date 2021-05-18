@@ -1,29 +1,32 @@
 name: Create QA
 
 on:
-  workflow_run:
-    workflows:
-      - Run unit tests
-    types: 
-      - completed
-  
   pull_request:
     types:
       - opened
       - synchronized
 
-
 jobs:
 
-  create:
+  testing:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+
+    - name: Test service package
+      run: go test -v github.com/istherepie/testing-actions/internal/service
+
+  create:
+    needs: testing
+    runs-on: ubuntu-latest
     steps:
     - name: Check branch
       run: git branch
-
-    - name: Echo conclusion
-      run: echo ${{ github.event.workflow_run }}
 
     - name: Create QA instance
       run: echo Setup QA for this particular feature
