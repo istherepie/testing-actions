@@ -8,9 +8,6 @@ on:
       - completed
 
 
-## SOME CHANGE
-# Fixes
-
 jobs:
 
   create:
