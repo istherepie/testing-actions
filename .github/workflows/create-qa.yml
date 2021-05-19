@@ -25,6 +25,9 @@ jobs:
     needs: testing
     runs-on: ubuntu-latest
     steps:
+
+    - name: Checkout code first
+      uses: actions/checkout@v2
     - name: Check branch
       run: git branch
 
