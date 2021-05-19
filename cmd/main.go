@@ -41,6 +41,8 @@ func main() {
 	port := flag.Int("port", 8080, "Service port.")
 	flag.Parse()
 
+	fmt.Println("CHANGE")
+
 	retCode := App(*instance, *host, *port)
 	os.Exit(retCode)
 }
